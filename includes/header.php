@@ -1,4 +1,8 @@
-<?php require_once('./includes/db.php'); ?>
+<?php
+    require_once('./includes/db.php'); 
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,22 +17,33 @@
     <!--Start Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
-            <a class="navbar-brand" href="#">Notepad</a>
+            <a class="navbar-brand">Notepad</a>
+            <?php 
+                if (isset($_SESSION['FullName']))
+                {
+                    echo '<a class="navbar-brand">[';
+                    echo $_SESSION['FullName'];
+                    echo ']</a>';
+                    echo '
+                        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                            data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
 
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Home</a>
-                    </li>                  
-                
-                </ul>
-            </div>
+                        <div class="collapse navbar-collapse" id="navbarResponsive">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="index.php">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="logout.php">Logout</a>
+                                </li>                        
+                            </ul>
+                        </div>        
+                    ';
+                }
+            ?>
         </div>
     </nav>
     <!--End Navigation-->

@@ -31,8 +31,9 @@
             if ($num_rows == 1)
             {
                 // If username / password correct
-
-                echo 'minden fasza';
+                $row = mysqli_fetch_assoc($result);
+                $_SESSION['FullName'] = $row['FullName'];
+                header("location:index.php");
             }
             else
             {
@@ -58,6 +59,26 @@
                     <strong>Successful registration!</strong>
                 </div>   
             </p>';
+        }
+    }
+
+    // Successful logout
+    if (isset($_GET["succlogout"]))
+    {		
+        if ($_GET["succlogout"] == "true")
+        {
+        print '
+            <p>
+                <div class="alert alert-success">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>You logged out successfully!</strong>
+                </div>   
+            </p>';
+        }
+
+        if (isset($_SESSION['FullName']))
+        {
+            var_dump($_SESSION['FullName']);
         }
     }
 
@@ -91,7 +112,7 @@
         }
     }
     ?>
-
+ 
     <div class="col-6 mx-auto"> 
         <div class="card">
             <h4 class="card-header">Login</h4>

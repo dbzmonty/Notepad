@@ -109,10 +109,12 @@
                         <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Password" required>
                         <br />                                
                         <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Registration</button>
+                        <br />                            
+                        Already registered? <a href="login.php" class="btn btn-primary">Login</a>
                     </form>
                 </div>                    
         </div>
     </div>
 </div>
 
-<?php require_once './includes/footer.php';?>
+<?php require_once('./includes/footer.php');?>

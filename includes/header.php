@@ -34,10 +34,13 @@
                         <div class="collapse navbar-collapse" id="navbarResponsive">
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link active" href="index.php">Home</a>
+                                    <button type="button" class="nav-link active btn" data-toggle="modal" data-target="#ModalCenter">Add</button>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link active" href="logout.php">Logout</a>
+                                    <a class="nav-link active btn" href="index.php">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active btn" href="logout.php">Logout</a>
                                 </li>                        
                             </ul>
                         </div>        

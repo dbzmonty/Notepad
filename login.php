@@ -11,6 +11,7 @@
 
         // Query
         $checkQuery = 'SELECT * FROM users where UserName = ? AND Password = ?';
+
         // Create prepared statement
         $stmt = mysqli_stmt_init($conn);
 
@@ -32,6 +33,7 @@
             {
                 // If username / password correct
                 $row = mysqli_fetch_assoc($result);
+                $_SESSION['UserID'] = $row['ID'];
                 $_SESSION['FullName'] = $row['FullName'];
                 header("location:index.php");
             }
@@ -75,11 +77,6 @@
                 </div>   
             </p>';
         }
-
-        if (isset($_SESSION['FullName']))
-        {
-            var_dump($_SESSION['FullName']);
-        }
     }
 
     // Unsuccessful login
@@ -119,10 +116,10 @@
                 <div class="card-body">
                     <form action="login.php" method="POST">                                                        
                         <label for="inputUserName" class="form-label">Username:</label>
-                        <input type="text" id="inputUserName" name="inputUserName" class="form-control" placeholder="Username" required>
+                        <input type="text" id="inputUserName" name="inputUserName" class="form-control" placeholder="Username" maxlength="255" required>
                         <br />                            
                         <label for="inputPassword" class="form-label">Password:</label>
-                        <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Password" required>
+                        <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Password" maxlength="32" required>
                         <br />
                         <button type="submit" class="btn btn-lg btn-primary btn-block" name="submit">Login</button>
                         <br />                            

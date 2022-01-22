@@ -100,13 +100,13 @@
                 <div class="card-body">
                     <form action="registration.php" method="POST">                                
                         <label for="inputFullName" class="form-label">Full name:</label>
-                        <input type="text" id="inputFullName" name="inputFullName" class="form-control" placeholder="Full name" required>
+                        <input type="text" id="inputFullName" name="inputFullName" class="form-control" placeholder="Full name" maxlength="255" required>
                         <br />
                         <label for="inputUserName" class="form-label">Username:</label>
-                        <input type="text" id="inputUserName" name="inputUserName" class="form-control" placeholder="Username" required>
+                        <input type="text" id="inputUserName" name="inputUserName" class="form-control" placeholder="Username" maxlength="255" required>
                         <br />
                         <label for="inputPassword" class="form-label">Password:</label>
-                        <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Password" required>
+                        <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Password" maxlength="32" required>
                         <br />                                
                         <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Registration</button>
                         <br />                            
